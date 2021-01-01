@@ -1,0 +1,18 @@
+<mat-toolbar color = 'primary'>Blog Title</mat-toolbar>
+<img src="https://picsum.photos/id/945/600/400">
+<h2>Comment Section:</h2>
+<mat-divider></mat-divider>
+<app-comments-component [ngClass]="{'comentarios':true}"></app-comments-component>
+
+<form #form01 = 'ngForm' color='primary' [ngClass]="{'form': true}" (ngSubmit)='handleData(name,comment)'>
+    <p class="formTitle">Send your Coment: </p>
+    <mat-form-field [ngClass]="{'field': true}">
+        <mat-label>Name:</mat-label>
+        <input matInput type=text #name placeholder='Name:'>
+    </mat-form-field>
+    <mat-form-field [ngClass]="{'field': true}">
+        <mat-label>Comment:</mat-label>
+        <textarea matInput type='text' #comment placeholder="Comentario:"></textarea>
+    </mat-form-field>
+        <button mat-raised-button color = 'accent'>Post</button>
+</form>
